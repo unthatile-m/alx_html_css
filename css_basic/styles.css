@@ -1,77 +1,146 @@
-/* styles.css - Custom styling for your portfolio */
+/* Importing webfonts */
+@import url(https://fonts.googleapis.com/css?family=Yeseva+One);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700italic,400italic);
 
-/* Body background and text */
+/* CSS reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-    background-color: #f9f9f9;
-    color: #333333;
+	line-height: 1;
 }
 
-/* Header customization */
+/* Fonts and colors */
+body {
+	font-family: 'Josefin Sans', serif;
+	color: rgba(0, 0, 0, 0.8);
+    display: flex;               /* Flex container for header/main/footer */
+    flex-direction: column;      /* stack vertically */
+    min-height: 100vh;           /* fill viewport height */
+}
+
+h1, h2, h3, h4, h5, h6, header {
+	font-family: 'Yeseva One', sans-serif;
+}
+
+header {
+	border-bottom: 1px solid rgb(221,221,221);
+	transition: border-bottom-color 1s ease;
+	padding: 20px 0;
+	height: 80px;
+}
+
+header ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header li {
+	display: inline;
+	vertical-align: middle;
+}
+
 header li.logo {
-    font-size: 48px; /* bigger logo */
-    color: #F80002;
+	font-size: 36px;
 }
 
 header li a {
-    font-weight: bold;
-    color: #555555;
+	margin: 0 10px;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.8);
 }
 
-header li a:hover {
-    color: #F80002;
-    text-decoration: underline;
+a {
+	color: #F80002;
 }
 
-/* Article styling */
-article h1, article h2, article h3 {
-    color: #222222;
+main {
+	display: flex;           /* Flex container for article + aside */
+	flex-direction: row;     /* side by side */
+	flex: auto;              /* allow main to grow/shrink automatically */
 }
 
-article p {
-    margin-bottom: 20px;
-    line-height: 1.6;
+article {
+	flex: 2;                 /* take 2/3 of main width */
+	overflow-y: auto;        /* scroll if content is too tall */
+	padding: 20px;
 }
 
-article table {
-    border: 2px solid #F80002;
-    border-collapse: collapse;
-    width: 100%;
+aside {
+	flex: 1;                 /* take 1/3 of main width */
+	overflow-y: auto;        /* scroll if content is too tall */
+	padding: 20px;
+	background: #FAFAFA;
 }
 
-article table th, article table td {
-    border: 1px solid #F80002;
-    padding: 10px;
-    text-align: left;
-}
-
-/* Aside styling */
 aside p {
-    background-color: #eeeeee;
-    border: 1px solid #ccc;
-    padding: 25px;
-    border-radius: 15px;
-    font-style: italic;
+	border: 1px solid #bbb;
+	background: #ddd;
+	color: black;
+	border-radius: 10px;
+	padding: 20px;
 }
 
-/* Footer styling */
 footer {
-    background-color: #f2f2f2;
-    text-align: center;
-    padding: 15px;
+	padding: 5px 15px;
+	height: 80px;
 }
 
 footer a {
-    color: #F80002;
-    text-decoration: none;
+	color: rgba(0, 0, 0, 0.8);
 }
 
-footer a:hover {
-    text-decoration: underline;
+p {
+	margin-bottom: 15px;
 }
 
-/* Responsive adjustments */
+h1 { font-size: 36px; margin: 40px 0 20px; }
+h2 { font-size: 32px; margin: 30px 0 15px; }
+h3 { font-size: 28px; margin: 25px 0 10px; }
+h4 { font-size: 20px; font-weight: bold; margin: 20px 0 10px; }
+h5 { font-size: 18px; font-weight: bold; margin: 15px 0 10px; }
+h6 { font-weight: bold; margin: 5px 0; }
+
+/* Responsive for smartphones */
 @media (max-width: 800px) {
-    article, aside {
-        padding: 20px;
+    body.works_on_smartphone {
+        display: block;
     }
+    body.works_on_smartphone main {
+        display: block;
+    }
+    header .right {
+        float: none;
+    }
+}
+
+/* Optional: center page on large screens */
+@media (min-width: 1100px) {
+	body {
+		width: 1100px;
+		margin: 0 auto;
+	}
 }
