@@ -36,9 +36,9 @@ body {
 body {
 	font-family: 'Josefin Sans', serif;
 	color: rgba(0, 0, 0, 0.8);
-    display: flex;               /* Flex container for header/main/footer */
-    flex-direction: column;      /* stack vertically */
-    min-height: 100vh;           /* fill viewport height */
+    display: flex;               
+    flex-direction: column;      
+    min-height: 100vh;           
 }
 
 h1, h2, h3, h4, h5, h6, header {
@@ -78,21 +78,24 @@ a {
 }
 
 main {
-	display: flex;           /* Flex container for article + aside */
-	flex-direction: row;     /* side by side */
-	flex: auto;              /* allow main to grow/shrink automatically */
+	display: flex;           
+	flex-direction: row;     
+	flex: auto;              
 }
 
 article {
-	flex: 2;                 /* take 2/3 of main width */
-	overflow-y: auto;        /* scroll if content is too tall */
-	padding: 20px;
+	flex: 2;                 
+	overflow-y: auto;        
+	padding: 50px 15px;      /* merged custom padding */
+	background-color: #fff;  /* optional custom background */
+	border: 1px solid #bbb;  /* optional border */
+	border-radius: 10px;     /* optional styling */
 }
 
 aside {
-	flex: 1;                 /* take 1/3 of main width */
-	overflow-y: auto;        /* scroll if content is too tall */
-	padding: 20px;
+	flex: 1;                 
+	overflow-y: auto;        
+	padding: 50px 15px;      
 	background: #FAFAFA;
 }
 
